@@ -7,8 +7,9 @@ require '../controllers/contactosController.php';
 
 use App\views\ContactosViews;
 
-$contactosViews = new ContactosViews();
-
+$contactosView = new ContactosViews();
+$datosFormulario = $_POST;
+$msg = $contactosView->getMsgConfirmarContacto($datosFormulario);
 ?>
 
 <!DOCTYPE html>
@@ -16,25 +17,16 @@ $contactosViews = new ContactosViews();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de contactos</title>
-    <link rel="stylesheet" href="css/inicio.css">
+    <title>Confirmar accion</title>
 </head>
 <body>
     <header>
-        <h1>Lista de contactos</h1>
+        <h1>Resultado de la operacion</h1>
     </header>
-    <br>
     <section>
-        <a href="formulario.php">
-            <button>Nuevo contacto</button>
-        </a>
+        <?php echo $msg; ?>
         <br>
-        <br>
-        <!-- Tabla de contactos -->
-         <?php
-         echo $contactosViews->tablaContactos();
-         ?>
-        <br>
+        <a href="inicio.php">Volver al inicio</a>
     </section>
 </body>
 </html>

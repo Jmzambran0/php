@@ -6,7 +6,7 @@ class EjemploDb{
     private $host = 'localhost';
     private $user = 'root';
     private $pwd = '';
-    private $name = 'ejemplo_db';
+    private $name = 'ejemplo_dl';
     private $conex;
     
     function __construct()
